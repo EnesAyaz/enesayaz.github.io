@@ -1,0 +1,23 @@
+# Public GitHub repositories shown on the Research Projects page.
+- group: Teaching and tools
+  items:
+    - {name: PWM Explorer, url: "https://enesayaz.github.io/Modulation-Course/", repo: Modulation-Course, year: 2026, text: "Interactive visualisation of modulation methods for the KTH course EJ2311, from two-level and NPC converters to cascaded H-bridge, flying capacitor and MMC."}
+- group: Wireless power transfer and GaN
+  items:
+    - {name: Narrowband and wideband WPT, repo: Narrowband-Wideband, year: 2024, text: "Circuit models, analysis and experiments for the dual-mode wireless power transfer system with a single transmitter."}
+    - {name: WPT-Motor, repo: WPTMotor, year: 2021–2023, text: "Studies on combining motor drives with wireless power transfer, including contactless slip rings and field excitation."}
+    - {name: Studies, repo: Studies, year: 2020–2023, text: "Working notes and models on GaN devices, wireless power transfer, Roebel windings, wind turbine generators and common-mode behaviour."}
+    - {name: IMMD and GaN, repo: IMMD-Enes, year: 2019, text: "Integrated modular motor drive work: GaN switches and gate drives, DSP control, space vector modulation and converter design."}
+    - {name: GaN modelling, repo: GaN-Modeling, year: 2018, text: "GaN device models in LTspice, MATLAB and Simscape."}
+- group: Electrical machines and converters (coursework)
+  items:
+    - {name: Electrical machine design 2022, repo: EE568-2022, year: 2022, text: "Analytical model and finite element analysis for the METU course EE568."}
+    - {name: Electrical machine design, repo: EE568-2019, year: 2020, text: "Four projects with analytical models and finite element analysis for the METU course EE568."}
+    - {name: Switch-mode power supplies, repo: SMPS, year: 2019–2020, text: "Forward converter design with custom magnetics, from simulation to experiment."}
+    - {name: Research League, repo: ResearchLeagueFall2018, year: 2018–2019, text: "GaN device and state-space modelling project."}
+    - {name: DC motor drive, repo: EE463-HardwareProject, year: 2018–2019, text: "Team hardware project: simulation, component selection and design of a dc motor drive."}
+    - {name: Power electronics hardware project, repo: EE464_Hardware_Project, year: 2019, text: "Team project with design calculations, simulations and tests."}
+    - {name: Ćuk converter, repo: EE464-Project1, year: 2019, text: "Simulation and control of a Ćuk converter."}
+    - {name: Engineering design, repo: EngineeringDesign, year: 2018–2019, text: "Team capstone project, from proposal and critical design report to the final demonstration."}
+    - {name: Electromechanical energy conversion, repo: EE361, year: 2018–2019, text: "Course demonstrations, including magnetic levitation and induction machines."}
+    - {name: Hardware-in-the-loop motor control, repo: HIL-Simulation, year: 2018, text: "PowerLab challenge: real-time motor control with Arduino and MATLAB."}

@@ -1,0 +1,10 @@
+---
+title: Blog
+icon: fas fa-pen-nib
+order: 1
+---
+{% if site.posts.size > 0 %}
+{% include post-cards.html posts=site.posts %}
+{% else %}
+<p>Posts will appear here.</p>
+{% endif %}

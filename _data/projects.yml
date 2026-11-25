@@ -1,10 +1,8 @@
-# Research projects shown as cards on the home page.
-# figure: file name in _includes/figures (without .svg).
-# To use a photo instead, add   image: /assets/img/your-photo.jpg   and   image_alt: "what it shows"
+# Research projects shown on the Research page.
+# To show a photo, add   image: /assets/img/your-photo.jpg   and   image_alt: "what it shows"
 # papers: link text and DOI.
 - title: 1.2 kV traction inverters for heavy-duty electric vehicles
   place: KTH
-  figure: traction
   text: >-
     Raising the dc-link from 800 V to 1.2 kV so that trucks can use megawatt charging.
     System-level assessment of battery, inverter and motor, with the inverter validated on a
@@ -15,7 +13,6 @@
     - {label: SPEC 2024, doi: 10.1109/spec62217.2024.10893180}
 - title: Carrier phase-shift modulation
   place: KTH
-  figure: modulation
   text: >-
     Adapting the carriers of two-level inverters in real time to reduce common-mode voltage
     and dc-link capacitor stress, with no extra hardware.
@@ -24,7 +21,6 @@
     - {label: ECCE Europe 2025, doi: 10.1109/ecce-europe62795.2025.11238855}
 - title: SiC device characterisation and health monitoring
   place: KTH
-  figure: devices
   text: >-
     Double-pulse testing, condition monitoring and reliability of SiC MOSFETs and power modules,
     including compensated on-state resistance as an indicator of package degradation.
@@ -34,7 +30,6 @@
     - {label: ECCE Europe 2024, doi: 10.1109/ecceeurope62508.2024.10751827}
 - title: Contactless field excitation
   place: KTH and METU
-  figure: excitation
   text: >-
     Feeding the rotor winding of electrically excited synchronous machines by wireless power
     transfer, using the existing motor-drive inverter or a bipolar supply for pole-changing machines.
@@ -43,7 +38,6 @@
     - {label: IEEE Trans. Power Electronics 2023, doi: 10.1109/tpel.2023.3300531}
 - title: Concurrent wired and wireless power transfer
   place: METU PowerLab
-  figure: concurrent
   text: >-
     One converter that drives a motor at the fundamental frequency and powers a wireless link
     with its switching harmonics, each controlled independently.
@@ -52,7 +46,6 @@
     - {label: IEEE JESTIE 2023, doi: 10.1109/JESTIE.2022.3182592}
 - title: Modular, fault-tolerant inductive power transfer
   place: METU PowerLab
-  figure: modular
   text: >-
     Multi-transmitter, multi-receiver systems that balance power between modules and keep running
     after open-circuit faults, demonstrated on a 1 kW prototype with a resonator coil.

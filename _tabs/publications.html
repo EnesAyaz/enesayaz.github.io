@@ -1,0 +1,12 @@
+---
+title: Publications
+icon: fas fa-book-open
+order: 5
+---
+{% assign years = site.data.publications | group_by: "year" %}
+{% for y in years %}
+<h2 id="y{{ y.name }}">{{ y.name }}</h2>
+<ul class="pubs">{% for pub in y.items %}{% include pub.html pub=pub %}{% endfor %}</ul>
+{% endfor %}
+<h2 id="thesis">Thesis</h2>
+<ul class="pubs"><li class="pub"><span class="pub-title">Concurrent operation of wireless power transfer based contactless slip ring and motor drive system with a single converter</span><div><strong>E. Ayaz</strong></div><div class="text-muted">M.Sc. thesis, Middle East Technical University, 2022</div></li></ul>

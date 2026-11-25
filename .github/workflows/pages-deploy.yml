@@ -1,0 +1,72 @@
+name: "Build and Deploy"
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll b -d _site
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: Test site
+        run: |
+          bundle exec htmlproofer _site \
+            \-\-disable-external \
+            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+
+      # Build again with the post template as a real post, so blog problems are caught early
+      - name: Test a sample post
+        run: |
+          mkdir -p _posts
+          cp _drafts/post-template.md _posts/2026-01-01-sample-post.md
+          bundle exec jekyll b -d _sample
+          rm _posts/2026-01-01-sample-post.md
+          test -s _sample/posts/sample-post/index.html
+          grep -q 'sample-post' _sample/blog/index.html
+          grep -q 'sample-post' _sample/index.html
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: Upload site artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: "_site"
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

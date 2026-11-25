@@ -1,0 +1,14 @@
+---
+title: Animations
+icon: fas fa-wave-square
+order: 2
+---
+<p>Interactive models from power electronics, modulation, electrical machines and wireless power transfer.</p>
+{% for a in site.animations %}
+<a class="anim-card" href="{{ a.url | relative_url }}">
+  <span data-animation="{{ a.animation }}" data-view="{{ a.view }}"></span>
+  <span><span class="card-title d-block">{{ a.title }}</span><span>{{ a.description }}</span><span class="d-block mt-2 text-muted small">{{ a.topics | join: ' · ' }}</span></span>
+</a>
+{% endfor %}
+{% include tool-card.html %}
+<script defer src="{{ '/assets/js/animations/field-excitation.js' | relative_url }}"></script>

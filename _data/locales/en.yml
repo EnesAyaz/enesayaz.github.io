@@ -1,0 +1,10 @@
+# Added to the theme's own English texts
+tabs:
+  home: Home
+  blog: Blog
+  animations: Animations
+  research: Research Projects
+  research projects: Research Projects
+  experience: Experience
+  publications: Publications
+  cv: CV

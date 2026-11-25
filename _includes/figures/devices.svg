@@ -1,9 +1,0 @@
-<svg class="fig" viewBox="0 0 320 180" role="img" aria-label="Idealised double-pulse test waveforms: gate voltage, drain-source voltage and drain current" xmlns="http://www.w3.org/2000/svg">
-<polyline class="w" points="34.0,40.0 70.0,40.0 70.0,18.0 155.0,18.0 155.0,40.0 190.0,40.0 190.0,18.0 240.0,18.0 240.0,40.0 304.0,40.0"/>
-<polyline class="b" points="34.0,62.0 70.0,62.0 74.0,98.0 155.0,98.0 159.0,62.0 190.0,62.0 194.0,98.0 240.0,98.0 244.0,62.0 304.0,62.0"/>
-<polyline class="a" points="34.0,162.0 70.0,162.0 155.0,134.0 155.0,162.0 190.0,162.0 192.0,124.0 195.0,134.0 240.0,118.0 240.0,162.0 304.0,162.0"/>
-<text x="4" y="33" text-anchor="start">v<tspan class="sub" dy="3">GS</tspan></text>
-<text x="4" y="84" text-anchor="start">v<tspan class="sub" dy="3">DS</tspan></text>
-<text x="4" y="150" text-anchor="start">i<tspan class="sub" dy="3">D</tspan></text>
-
-</svg>

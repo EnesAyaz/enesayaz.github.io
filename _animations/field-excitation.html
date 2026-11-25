@@ -1,0 +1,33 @@
+---
+title: Field excitation through wireless power transfer
+description: How the motor inverter can feed the rotor winding of a synchronous machine across the air gap, without slip rings.
+topics: [Electrical machines, Wireless power transfer, Modulation]
+animation: field-excitation
+view: machine
+order: 1
+---
+<p>An electrically excited synchronous machine needs dc current in its rotor winding. Here the inverter that drives the motor also excites a wireless link: the link is connected between two inverter legs and tuned to the switching frequency. A rectifier on the rotor feeds the field winding, so no slip rings and no extra converter are needed.</p>
+
+<div data-animation="field-excitation"></div>
+
+<h2 id="try">Things to try</h2>
+<ul>
+  <li><strong>Change the modulation index.</strong> With the automatic phase shift on, the field current stays at its reference while the motor operating point changes. Switch it off and the field current follows the modulation index.</li>
+  <li><strong>Raise the modulation index to 1 and the reference to 6 A.</strong> The switching harmonic becomes too small and the phase shift reaches its limit of 180°.</li>
+  <li><strong>Widen the air gap by lowering the coupling.</strong> In a tuned series-series link the secondary current is inversely proportional to the mutual inductance, so weaker coupling needs a smaller phase shift, but a larger primary current.</li>
+  <li><strong>Change the rotor speed.</strong> The stator voltage scales with both speed and field current. The field current itself does not depend on speed.</li>
+</ul>
+
+<h2 id="model">Model</h2>
+<p>The animation solves a fundamental-harmonic model with a lossless link. The switching-frequency voltage between two legs with sinusoidal PWM is</p>
+<p>\[ V_1 = \frac{4 V_{dc}}{\pi}\, J_0\!\left(\frac{\pi m}{2}\right) \sin\frac{\beta}{2} \]</p>
+<p>where \(m\) is the modulation index and \(\beta\) the carrier phase shift between the legs. The tuned series-series link and the rectifier give</p>
+<p>\[ I_2 = \frac{V_1}{\omega M}, \qquad i_{dc} = \frac{2}{\pi} I_2, \qquad C_f \frac{dv}{dt} = i_{dc} - i_f, \qquad L_f \frac{di_f}{dt} = v - R_f i_f \]</p>
+<p>Parameters are illustrative: 100 V dc link, 60 kHz, 120 µH coils, 8 Ω and 80 mH field winding, 4.7 mF filter. The machine and the field current run ten times slower than real time, and the 60 kHz waveforms are slowed much further. The switch states are drawn at the instant when the motor references cross zero.</p>
+
+<h2 id="papers">Related papers</h2>
+<ul class="pubs">
+{% for pub in site.data.publications %}{% if pub.topic == "Field excitation" %}{% include pub.html pub=pub brief=true %}{% endif %}{% endfor %}
+</ul>
+<script defer src="{{ '/assets/js/animations/field-excitation.js' | relative_url }}"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>

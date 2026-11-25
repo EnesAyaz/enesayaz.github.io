@@ -1,0 +1,18 @@
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true
+
+- type: google-scholar
+  icon: "fa-brands fa-google-scholar"
+  url: "https://scholar.google.com/citations?user=q9CcLWAAAAAJ"
+
+- type: orcid
+  icon: "fa-brands fa-orcid"
+  url: "https://orcid.org/0000-0002-5677-1336"
+
+- type: github
+  icon: "fab fa-github"
+
+- type: kth
+  icon: "fas fa-building-columns"
+  url: "https://www.kth.se/profile/enesa"

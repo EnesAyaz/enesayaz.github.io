@@ -1,41 +1,41 @@
 ---
-layout: base
-title: Enes Ayaz
-share-title: Enes Ayaz | Power electronics researcher, KTH
-share-description: Ph.D. candidate in power electronics at KTH Royal Institute of Technology, working on SiC traction inverters for heavy-duty electric vehicles, modulation and wireless power transfer.
-nav: Home
+layout: home
 ---
-<div class="wrap page">
-  <div class="intro">
-    <div>
-      <h1>Enes Ayaz</h1>
-      <p class="role">Ph.D. candidate in power electronics, <a href="https://www.kth.se/">KTH Royal Institute of Technology</a></p>
-      <p>I work on silicon-carbide traction inverters for heavy-duty electric vehicles, and on modulation methods that improve how inverters perform. I am a doctoral student in the Division of Electric Power and Energy Systems, supervised by Staffan Norrga and Hans-Peter Nee.</p>
-      <p>Before KTH, I received my B.Sc. (2019) and M.Sc. (2022) in Electrical and Electronics Engineering from Middle East Technical University, and did research on wireless power transfer at METU PowerLab.</p>
-    </div>
-    <aside>
-      {% if site.avatar %}<img src="{{ site.avatar | relative_url }}" alt="Portrait of Enes Ayaz" width="200" height="230">{% endif %}
-      <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
-      <p>Teknikringen 33<br>100 44 Stockholm, Sweden</p>
-      <ul>{% for p in site.contact.profiles %}<li><a href="{{ p[1] }}">{{ p[0] }}</a></li>{% endfor %}<li><a href="{{ '/CV/' | relative_url }}">CV</a></li></ul>
-    </aside>
+<section class="home-intro">
+  <div>
+    <h1>Enes Ayaz</h1>
+    <p class="role">Ph.D. candidate in power electronics, KTH Royal Institute of Technology, Stockholm</p>
+    <p>I work on silicon-carbide traction inverters for heavy-duty electric vehicles, and on modulation methods that improve how inverters perform. I am a doctoral student in the Division of Electric Power and Energy Systems, supervised by Staffan Norrga and Hans-Peter Nee.</p>
+    <p>Before KTH, I received my B.Sc. (2019) and M.Sc. (2022) in Electrical and Electronics Engineering from Middle East Technical University, and did research on wireless power transfer at METU PowerLab.</p>
   </div>
+  <img class="portrait" src="/assets/img/portrait.jpg" alt="Enes Ayaz" width="380" height="440">
+</section>
 
-  <h2>News</h2>
-  <dl class="cv">
-    {% for n in site.data.news limit:6 %}<dt>{{ n.date }}</dt><dd>{{ n.text }}</dd>
-    {% endfor %}
-  </dl>
-  {% if site.posts.size > 0 %}
-  <h2>Latest posts</h2>
-  <dl class="cv">
-    {% for post in site.posts limit:3 %}<dt>{{ post.date | date: "%b %-d, %Y" }}</dt><dd><a href="{{ post.url | relative_url }}">{{ post.title }}</a></dd>
-    {% endfor %}
-  </dl>
-  {% endif %}
-  <h2>Selected publications</h2>
-  <ul class="pubs">
-  {% for pub in site.data.publications %}{% if pub.selected %}{% include pub.html pub=pub brief=true %}{% endif %}{% endfor %}
-  </ul>
-  <p class="more"><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
-</div>
+<h2 id="animations">Animations</h2>
+{% for a in site.animations limit:2 %}
+<a class="anim-card" href="{{ a.url | relative_url }}">
+  <span data-animation="{{ a.animation }}" data-view="{{ a.view }}"></span>
+  <span><span class="card-title d-block">{{ a.title }}</span><span>{{ a.description }}</span></span>
+</a>
+{% endfor %}
+
+{% include tool-card.html %}
+
+{% if site.posts.size > 0 %}
+<h2 id="posts">Latest posts</h2>
+{% include post-cards.html posts=site.posts limit=3 %}
+{% endif %}
+
+<h2 id="news">News</h2>
+<dl class="news">
+{% for n in site.data.news limit:6 %}<dt>{{ n.date }}</dt><dd>{{ n.text }}</dd>
+{% endfor %}
+</dl>
+
+<h2 id="selected-publications">Selected publications</h2>
+<ul class="pubs">
+{% for pub in site.data.publications %}{% if pub.selected %}{% include pub.html pub=pub brief=true %}{% endif %}{% endfor %}
+</ul>
+<p><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
+
+<script defer src="{{ '/assets/js/animations/field-excitation.js' | relative_url }}"></script>

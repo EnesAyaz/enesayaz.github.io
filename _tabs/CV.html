@@ -1,0 +1,59 @@
+---
+title: CV
+icon: fas fa-file-lines
+order: 6
+permalink: /CV/
+---
+<p class="no-print"><button class="btn btn-outline-primary" type="button" onclick="window.print()">Print or save as PDF</button></p>
+
+<h2 id="education">Education</h2>
+<dl class="cv">
+  <dt>2023–present</dt>
+  <dd><strong>Ph.D. candidate, Electrical Engineering</strong><br>KTH Royal Institute of Technology, Stockholm, Sweden<br>Division of Electric Power and Energy Systems. Supervisors: Staffan Norrga and Hans-Peter Nee.<br>50% seminar, Dec 2025: <a href="https://www.kth.se/epe/calendar/1-2-kv-heavy-duty-electric-vehicle-powertrains-system-level-analysis-and-holistic-efficiency-optimization-of-the-traction-inverter-1.1446235">1.2 kV Heavy-Duty Electric Vehicle Powertrains</a></dd>
+  <dt>2019–2022</dt>
+  <dd><strong>M.Sc., Electrical and Electronics Engineering</strong><br>Middle East Technical University (METU), Ankara, Turkey. GPA 3.75/4</dd>
+  <dt>2014–2019</dt>
+  <dd><strong>B.Sc., Electrical and Electronics Engineering</strong><br>Middle East Technical University (METU), Ankara, Turkey. GPA 3.58/4</dd>
+</dl>
+
+<h2 id="experience">Experience</h2>
+<dl class="cv">
+  <dt>May 2023–present</dt>
+  <dd><strong>Doctoral student</strong><br>KTH Royal Institute of Technology, Stockholm</dd>
+  <dt>Mar 2020–Apr 2023</dt>
+  <dd><strong>Teaching assistant</strong><br>Department of Electrical and Electronics Engineering, METU, Ankara</dd>
+  <dt>Mar 2018–Apr 2023</dt>
+  <dd><strong>Researcher</strong><br>METU PowerLab, Ankara</dd>
+  <dt>Jun–Jul 2018</dt>
+  <dd><strong>Intern</strong><br>ASELSAN, Ankara</dd>
+  <dt>Jul–Aug 2017</dt>
+  <dd><strong>Intern</strong><br>TÜBİTAK UZAY, Ankara</dd>
+</dl>
+
+<h2 id="research-interests">Research interests</h2>
+<p>Traction inverters, modulation, wide-bandgap semiconductors, wireless and inductive power transfer, resonant converters, motor drives, power quality.</p>
+
+<h2 id="skills">Skills</h2>
+<dl class="cv">
+  <dt>Programming</dt><dd>MATLAB, Embedded C (TI C2000), Python, LaTeX</dd>
+  <dt>Tools</dt><dd>Simulink, LTspice, Maxwell (FEM), Altium (PCB design)</dd>
+</dl>
+
+<h2 id="awards">Awards</h2>
+<p>High Honor Student, Department of Electrical and Electronics Engineering, Middle East Technical University</p>
+
+<h2 id="graduate-coursework">Graduate coursework</h2>
+<ul>
+  <li>Electrical Power Quality, Monitoring and Improvement (Murat Göl, Fall 2020)</li>
+  <li>Linear Systems Theory II (Umut Orguner, Spring 2020)</li>
+  <li>Special Topics in Power Electronics (Muammer Ermiş, Fall 2019)</li>
+  <li>Switch-Mode Power Supplies (Işık Çadırcı, Fall 2019)</li>
+  <li>Selected Topics in Electrical Machines (Ozan Keysan, Spring 2019)</li>
+</ul>
+
+{% assign journals = site.data.publications | where: "kind", "journal" %}
+{% assign confs = site.data.publications | where: "kind", "conference" %}
+<h2 id="journal-papers">Journal papers</h2>
+<ul class="pubs">{% for pub in journals %}{% include pub.html pub=pub brief=true %}{% endfor %}</ul>
+<h2 id="conference-papers">Conference papers</h2>
+<ul class="pubs">{% for pub in confs %}{% include pub.html pub=pub brief=true %}{% endfor %}</ul>
