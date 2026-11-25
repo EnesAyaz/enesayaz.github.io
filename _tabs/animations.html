@@ -12,13 +12,4 @@ order: 2
 {% endfor %}
 {% include tool-card.html %}
 
-<h2 id="videos">Videos</h2>
-<p>Synchronous machine basics, animated with Manim. The machine is an ideal two-pole machine with sinusoidally distributed windings.</p>
-{% for v in site.data.videos %}
-<h3 id="{{ v.id }}">{{ v.title }}</h3>
-<p>{{ v.text }}</p>
-<video class="anim-video" controls loop muted playsinline preload="none" width="1280" height="720" poster="{{ '/assets/video/' | append: v.id | append: '.jpg' | relative_url }}" aria-label="{{ v.title }}">
-  <source src="{{ '/assets/video/' | append: v.id | append: '.mp4' | relative_url }}" type="video/mp4">
-</video>
-{% endfor %}
-<script defer src="{{ '/assets/js/animations/field-excitation.js' | relative_url }}"></script>
+{% include animation-scripts.html %}

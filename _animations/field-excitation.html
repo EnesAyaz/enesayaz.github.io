@@ -29,5 +29,5 @@ order: 1
 <ul class="pubs">
 {% for pub in site.data.publications %}{% if pub.topic == "Field excitation" %}{% include pub.html pub=pub brief=true %}{% endif %}{% endfor %}
 </ul>
-<script defer src="{{ '/assets/js/animations/field-excitation.js' | relative_url }}"></script>
+{% include animation-scripts.html %}
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>

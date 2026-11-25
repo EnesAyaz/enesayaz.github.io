@@ -1,0 +1,4 @@
+{% comment %} Load the shared code and every animation {% endcomment %}
+<script defer src="{{ '/assets/js/animations/core.js' | relative_url }}"></script>
+{% for a in site.animations %}<script defer src="{{ '/assets/js/animations/' | append: a.animation | append: '.js' | relative_url }}"></script>
+{% endfor %}

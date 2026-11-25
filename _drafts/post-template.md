@@ -40,7 +40,7 @@ Put images in `assets/img` and include them like this:
 An animation from the Animations page can be placed in a post:
 
 <div data-animation="field-excitation" data-view="machine" style="max-width:320px"></div>
-<script defer src="/assets/js/animations/field-excitation.js"></script>
+{% include animation-scripts.html %}
 
 ## Code
 

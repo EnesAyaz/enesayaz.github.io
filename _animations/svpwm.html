@@ -1,0 +1,28 @@
+---
+title: Space vector PWM
+description: Drag the reference vector and see how two active vectors and two zero vectors build it in every switching period.
+topics: [Modulation, Power electronics]
+animation: svpwm
+view: hexagon
+order: 2
+---
+<p>A two-level three-phase inverter has eight switching states: six active vectors and two zero vectors. Space vector PWM builds the reference vector in every switching period from the two nearest active vectors, and fills the rest of the period with V0 and V7. <strong>Drag the orange vector</strong> to move the reference.</p>
+
+<div data-animation="svpwm"></div>
+
+<h2 id="try">Things to try</h2>
+<ul>
+  <li><strong>Rotate through the six sectors.</strong> The two active vectors change at each border, and the leg with the highest duty ratio switches first.</li>
+  <li><strong>Compare sine PWM and SVPWM at an amplitude of 1.1.</strong> Sine PWM is limited to 1, the dashed circle. SVPWM reaches \(2/\sqrt{3} \approx 1.155\), the circle inside the hexagon.</li>
+  <li><strong>Look at the zero vectors.</strong> SVPWM gives V0 and V7 the same time. Sine PWM builds the same reference vector, but shares the zero time differently.</li>
+  <li><strong>Select DPWM1.</strong> Only one zero vector is used at a time, so one leg stops switching for a third of the period.</li>
+</ul>
+
+<h2 id="model">Model</h2>
+<p>Amplitudes are relative to half the dc-link voltage. The reference of phase \(x\) is</p>
+<p>\[ u_x = M\cos\!\left(\theta - x\,\tfrac{2\pi}{3}\right) + z, \qquad d_x = \tfrac{1}{2}(1 + u_x) \]</p>
+<p>and the methods differ only in the zero sequence \(z\). For SVPWM</p>
+<p>\[ z = -\tfrac{1}{2}\left(\max u + \min u\right) \]</p>
+<p>The time of the first active vector is the difference between the highest and the middle duty ratio, and the time of the second is the difference between the middle and the lowest. The line voltage plot uses 24 switching periods per fundamental period, with one reference sample per period.</p>
+{% include animation-scripts.html %}
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>

@@ -14,7 +14,7 @@ layout: home
 </section>
 
 <h2 id="animations">Animations</h2>
-{% for a in site.animations limit:2 %}
+{% for a in site.animations limit:3 %}
 <a class="anim-card" href="{{ a.url | relative_url }}">
   <span data-animation="{{ a.animation }}" data-view="{{ a.view }}"></span>
   <span><span class="card-title d-block">{{ a.title }}</span><span>{{ a.description }}</span></span>
@@ -40,4 +40,4 @@ layout: home
 </ul>
 <p><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
 
-<script defer src="{{ '/assets/js/animations/field-excitation.js' | relative_url }}"></script>
+{% include animation-scripts.html %}

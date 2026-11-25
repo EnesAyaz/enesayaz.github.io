@@ -53,69 +53,7 @@
     while (this.hist.length && this.hist[0][0] < this.t - SPAN) this.hist.shift();
   };
 
-  /* ---------- drawing helpers ---------- */
-  function Pen(canvas, W, H) {
-    this.cv = canvas; this.W = W; this.H = H; this.g = canvas.getContext('2d');
-    canvas.style.aspectRatio = W + ' / ' + H;
-  }
-  Pen.prototype.begin = function () {
-    var r = window.devicePixelRatio || 1, w = this.cv.clientWidth;
-    if (!w) return false;
-    var pw = Math.round(w * r), ph = Math.round(w * this.H / this.W * r);
-    if (this.cv.width !== pw || this.cv.height !== ph) { this.cv.width = pw; this.cv.height = ph; }
-    var s = pw / this.W, g = this.g;
-    g.setTransform(s, 0, 0, s, 0, 0); g.clearRect(0, 0, this.W, this.H);
-    g.lineCap = 'round'; g.lineJoin = 'round'; g.globalAlpha = 1; g.setLineDash([]);
-    var cs = getComputedStyle(this.cv);
-    this.ink = cs.color; this.soft = cs.getPropertyValue('--anim-soft').trim() || '#8a949c';
-    this.face = cs.getPropertyValue('--anim-face').trim() || '#e9edf0'; this.bg = cs.getPropertyValue('--anim-bg').trim() || '#fff';
-    this.font = cs.fontFamily;
-    return true;
-  };
-  Pen.prototype.line = function (pts, col, w, a) {
-    var g = this.g; g.globalAlpha = a === undefined ? 1 : a; g.strokeStyle = col || this.soft; g.lineWidth = w || 1.6; g.beginPath();
-    for (var i = 0; i < pts.length; i++) g[i ? 'lineTo' : 'moveTo'](pts[i][0], pts[i][1]);
-    g.stroke(); g.globalAlpha = 1;
-  };
-  Pen.prototype.text = function (s, x, y, o) {
-    o = o || {}; var g = this.g; g.globalAlpha = 1; g.fillStyle = o.col || this.soft;
-    g.font = (o.bold ? '600 ' : '') + (o.size || 12.5) + 'px ' + this.font; g.textAlign = o.align || 'center'; g.textBaseline = 'middle'; g.fillText(s, x, y);
-  };
-  Pen.prototype.dot = function (x, y, r, col, a) {
-    var g = this.g; g.globalAlpha = a === undefined ? 1 : a; g.fillStyle = col; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); g.globalAlpha = 1;
-  };
-  /* charges moving along a path; shift is in path units */
-  Pen.prototype.flow = function (pts, shift, col, a) {
-    if (a < 0.03) return;
-    var seg = [], L = 0, i, d, gap = 22;
-    for (i = 1; i < pts.length; i++) { d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); seg.push([L, d]); L += d; }
-    for (var s = ((shift % gap) + gap) % gap; s < L; s += gap) {
-      for (i = 0; i < seg.length - 1 && s > seg[i][0] + seg[i][1]; i++);
-      var f = (s - seg[i][0]) / seg[i][1];
-      this.dot(pts[i][0] + f * (pts[i + 1][0] - pts[i][0]), pts[i][1] + f * (pts[i + 1][1] - pts[i][1]), 2.7, col, a);
-    }
-  };
-  Pen.prototype.coil = function (x, y0, y1, n, side, col, w) {
-    var g = this.g, r = (y1 - y0) / n / 2; g.strokeStyle = col; g.lineWidth = w || 2.4; g.beginPath(); g.moveTo(x, y0);
-    for (var i = 0; i < n; i++) g.arc(x, y0 + r * (2 * i + 1), r, -PI / 2, PI / 2, side < 0);
-    g.stroke();
-  };
-  Pen.prototype.cap = function (x, y, horizontalWire) {
-    var b = this; this.g.fillStyle = this.bg;
-    if (horizontalWire) { this.g.fillRect(x - 4, y - 12, 8, 24); b.line([[x - 4, y - 11], [x - 4, y + 11]], this.ink, 2); b.line([[x + 4, y - 11], [x + 4, y + 11]], this.ink, 2); }
-    else { this.g.fillRect(x - 13, y - 4, 26, 8); b.line([[x - 12, y - 4], [x + 12, y - 4]], this.ink, 2); b.line([[x - 12, y + 4], [x + 12, y + 4]], this.ink, 2); }
-  };
-  Pen.prototype.sw = function (x, y, on) {
-    var g = this.g; g.fillStyle = on ? HF : this.bg; g.strokeStyle = on ? HF : this.soft; g.lineWidth = 1.6;
-    g.beginPath(); g.rect(x - 11, y - 14, 22, 28); g.fill(); g.stroke();
-    var c = on ? '#fff' : this.soft;
-    if (on) this.line([[x, y - 8], [x, y + 8]], c, 2.2); else this.line([[x, y + 8], [x - 6, y - 6]], c, 1.8);
-  };
-  Pen.prototype.diode = function (x, y, on) {
-    var g = this.g; g.fillStyle = on ? FIELD : this.bg; g.strokeStyle = on ? FIELD : this.soft; g.lineWidth = 1.6;
-    g.beginPath(); g.moveTo(x - 8, y + 7); g.lineTo(x + 8, y + 7); g.lineTo(x, y - 7); g.closePath(); g.fill(); g.stroke();
-    this.line([[x - 8, y - 7], [x + 8, y - 7]], on ? FIELD : this.soft, 2);
-  };
+  var Pen = window.PEAnim.Pen;
 
   /* ---------- WPT circuit ---------- */
   function drawCircuit(p, M) {

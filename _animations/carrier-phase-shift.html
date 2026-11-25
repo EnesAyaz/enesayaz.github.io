@@ -1,0 +1,32 @@
+---
+title: Carrier phase shift
+description: Shift the carriers of the three legs and see what happens to common-mode voltage, dc-link capacitor current and line voltage harmonics.
+topics: [Modulation, Power electronics]
+animation: carrier-phase-shift
+view: thumb
+order: 3
+---
+<p>In a two-level inverter the three legs usually share one carrier. Giving each leg its own carrier phase does not change the fundamental voltage, but it moves the switching harmonics. That changes the common-mode voltage, the current in the dc-link capacitor and the harmonics in the line voltage, often in opposite directions.</p>
+
+<div data-animation="carrier-phase-shift"></div>
+
+<h2 id="try">Things to try</h2>
+<ul>
+  <li><strong>Switch from carriers in phase to 120° apart.</strong> The common-mode voltage drops, because the three legs rarely have the same state. The peaks of ½ only remain for short times.</li>
+  <li><strong>Watch the price.</strong> With shifted carriers the harmonics at the switching frequency no longer cancel between the lines, so the line voltage spectrum and the weighted THD get worse.</li>
+  <li><strong>Lower the modulation index.</strong> With carriers in phase all three legs then switch together most of the time, and the common-mode voltage is at its worst.</li>
+  <li><strong>Shift one carrier by 180°.</strong> The common-mode voltage also drops, but two of the three line voltages get worse and the capacitor current rises.</li>
+</ul>
+<p>A fixed shift is only a compromise over the fundamental period. The papers below change the carriers within the period.</p>
+
+<h2 id="model">Model</h2>
+<p>Naturally sampled sine PWM with ideal switches over one fundamental period. With leg states \(S_x\), the common-mode voltage to the dc midpoint and the dc-link current are</p>
+<p>\[ \frac{v_{cm}}{V_{dc}} = \frac{S_a + S_b + S_c}{3} - \frac{1}{2}, \qquad i_{dc} = S_a i_a + S_b i_b + S_c i_c \]</p>
+<p>The phase currents are sinusoidal and lag the voltage by 30°, and the capacitor takes all of the ac part of \(i_{dc}\). Its rms value is given relative to the phase current rms. The spectrum is the rms over the three line voltages. The weighted THD divides each harmonic by its order and covers harmonics up to just above twice the carrier frequency.</p>
+
+<h2 id="papers">Related papers</h2>
+<ul class="pubs">
+{% for pub in site.data.publications %}{% if pub.topic == "Modulation" or pub.doi == "10.1109/TIE.2022.3213908" %}{% include pub.html pub=pub brief=true %}{% endif %}{% endfor %}
+</ul>
+{% include animation-scripts.html %}
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
