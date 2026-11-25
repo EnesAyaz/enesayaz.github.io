@@ -22,7 +22,7 @@
 .home-intro .role { color: var(--text-muted-color); margin-bottom: 1rem; }
 /* the sidebar, with its photo, is hidden below 850px */
 .home-intro .portrait { display: none; }
-@media (max-width: 849px) { .home-intro .portrait { display: block; width: 140px; height: auto; border-radius: 0.5rem; background: #fff; margin: 1rem 0; } }
+@media (max-width: 849px) { .home-intro .portrait { display: block; width: 140px; aspect-ratio: 570 / 660; border-radius: 0.5rem; background: #fff url('/assets/img/portrait.jpg') center / cover; margin: 1rem 0; } }
 .news { display: grid; grid-template-columns: 6rem 1fr; gap: 0.4rem 1rem; }
 .news dt { font-weight: 400; color: var(--text-muted-color); }
 .news dd { margin: 0; }
@@ -50,7 +50,7 @@
 @media print { #sidebar, #topbar-wrapper, #panel-wrapper, .no-print, #back-to-top { display: none !important; } #main-wrapper { margin: 0 !important; padding: 0 !important; } .pub { break-inside: avoid; } }
 
 /* Animations */
-.anim { --anim-soft: #8a949c; --anim-face: #e8ecef; --anim-bg: #fff; color: #2a2a2a; font-family: 'Source Sans Pro', sans-serif; display: grid; gap: 1rem; margin: 1rem 0; }
+.anim { --anim-soft: #8a949c; --anim-face: #e8ecef; --anim-bg: #fff; color: #2a2a2a; font-family: 'Source Sans Pro', sans-serif; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin: 1rem 0; }
 [data-bs-theme='dark'] .anim { --anim-soft: #7d868d; --anim-face: #2c2f33; --anim-bg: #1b1b1e; color: #d8dadc; }
 .anim canvas { display: block; width: 100%; }
 .anim-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.5rem; align-items: center; }
@@ -63,7 +63,8 @@
 .anim-controls .anim-play { justify-self: start; padding: 0.3rem 1.1rem; border: 1px solid #e07b1a; border-radius: 0.4rem; background: #e07b1a; color: #fff; font-weight: 600; }
 .anim-plots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 1rem; }
 @media (max-width: 640px) {
-  .anim-row { grid-template-columns: 1fr; }
+  .anim-row { grid-template-columns: minmax(0, 1fr); }
   .anim-scene { overflow-x: auto; }
   .anim-scene canvas { min-width: 560px; }
 }
+mjx-container[display='true'] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
