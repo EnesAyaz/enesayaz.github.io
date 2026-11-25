@@ -1,0 +1,15 @@
+<svg class="fig" viewBox="0 0 320 180" role="img" aria-label="Output spectrum of a sinusoidal PWM inverter: the fundamental drives the motor and switching-frequency harmonics feed wireless power transfer" xmlns="http://www.w3.org/2000/svg">
+<line class="w" x1="20" y1="150" x2="304" y2="150"/>
+<line class="a stem" x1="45" y1="150" x2="45" y2="50.0"/>
+<line class="b stem" x1="132" y1="150" x2="132" y2="122.5"/>
+<line class="b stem" x1="150" y1="150" x2="150" y2="47.7"/>
+<line class="b stem" x1="168" y1="150" x2="168" y2="122.5"/>
+<line class="b stem" x1="228" y1="150" x2="228" y2="132.6"/>
+<line class="b stem" x1="246" y1="150" x2="246" y2="110.7"/>
+<line class="b stem" x1="264" y1="150" x2="264" y2="110.7"/>
+<line class="b stem" x1="282" y1="150" x2="282" y2="132.6"/>
+<text x="50" y="170" text-anchor="middle">f<tspan class="sub" dy="3">0</tspan><tspan dy="-3"> motor</tspan></text>
+<text x="150" y="170" text-anchor="middle">f<tspan class="sub" dy="3">sw</tspan><tspan dy="-3"> wireless</tspan></text>
+<text x="255" y="170" text-anchor="middle">2f<tspan class="sub" dy="3">sw</tspan></text>
+
+</svg>

@@ -1,0 +1,15 @@
+---
+layout: page
+title: Publications
+share-title: Publications | Enes Ayaz
+subtitle: Peer-reviewed journal and conference papers. Titles link to the publisher.
+nav: Publications
+---
+{% assign journals = site.data.publications | where: "kind", "journal" %}
+{% assign confs = site.data.publications | where: "kind", "conference" %}
+<h2>Journal papers</h2>
+<ul class="pubs">{% for pub in journals %}{% include pub.html pub=pub %}{% endfor %}</ul>
+<h2>Conference papers</h2>
+<ul class="pubs">{% for pub in confs %}{% include pub.html pub=pub %}{% endfor %}</ul>
+<h2>Thesis</h2>
+<ul class="pubs"><li class="pub"><span class="pub-title">Concurrent operation of wireless power transfer based contactless slip ring and motor drive system with a single converter</span><p><strong>E. Ayaz</strong></p><p>M.Sc. thesis, Middle East Technical University, 2022</p></li></ul>

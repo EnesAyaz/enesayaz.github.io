@@ -1,5 +1,46 @@
 ---
-layout: home
+layout: base
 title: Enes Ayaz
-subtitle: This is where I will tell my friends and colleagues way too much about me
+share-title: Enes Ayaz | Power electronics researcher, KTH
+share-description: Ph.D. candidate in power electronics at KTH Royal Institute of Technology, working on SiC traction inverters for heavy-duty electric vehicles, modulation and wireless power transfer.
+nav: Home
 ---
+<section class="hero">
+  <div class="wrap hero-top">
+    <div>
+      <h1>Enes Ayaz</h1>
+      <p class="role">Ph.D. candidate in power electronics, KTH Royal Institute of Technology</p>
+      <p class="lede">I work on silicon-carbide traction inverters for heavy-duty electric vehicles, and on modulation methods that improve how inverters perform. My earlier research at METU PowerLab was on wireless power transfer.</p>
+      <p class="actions"><a class="btn" href="{{ '/CV' | relative_url }}">View CV</a> <a class="btn ghost" href="{{ '/publications' | relative_url }}">Publications</a> <a class="btn ghost" href="mailto:{{ site.contact.email }}">Email</a></p>
+    </div>
+    {% if site.avatar %}<img class="portrait" src="{{ site.avatar | relative_url }}" alt="Portrait of Enes Ayaz" width="200" height="230">{% endif %}
+  </div>
+  <div class="wave">{% include figures/hero-spwm.svg %}</div>
+</section>
+
+<section class="wrap" id="research">
+  <h2>Research</h2>
+  <div class="cards">
+  {% for pr in site.data.projects %}
+    <article class="card">
+      {% if pr.image %}<img src="{{ pr.image | relative_url }}" alt="{{ pr.image_alt }}" loading="lazy">{% else %}{% include figures/{{ pr.figure }}.svg %}{% endif %}
+      <h3>{{ pr.title }}</h3>
+      <p class="meta">{{ pr.place }}</p>
+      <p>{{ pr.text }}</p>
+      <ul class="refs">
+        {% for d in pr.papers %}<li><a href="https://doi.org/{{ d.doi }}">{{ d.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Recent journal papers</h2>
+  <ul class="pubs">
+  {% assign journals = site.data.publications | where: "kind", "journal" %}
+  {% for pub in journals limit:4 %}{% include pub.html pub=pub %}{% endfor %}
+  </ul>
+  <p><a href="{{ '/publications' | relative_url }}">All publications</a></p>
+</section>
