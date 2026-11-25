@@ -18,19 +18,11 @@
 #sidebar #avatar img { object-fit: cover; }
 
 /* Home */
-.home-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
-  gap: 2rem;
-  align-items: start;
-}
 .home-intro h1 { margin: 0 0 0.25rem; }
 .home-intro .role { color: var(--text-muted-color); margin-bottom: 1rem; }
-.home-intro .portrait { width: 100%; border-radius: 0.5rem; background: #fff; }
-@media (max-width: 640px) {
-  .home-intro { grid-template-columns: 1fr; gap: 1rem; }
-  .home-intro .portrait { width: 140px; grid-row: 1; }
-}
+/* the sidebar, with its photo, is hidden below 850px */
+.home-intro .portrait { display: none; }
+@media (max-width: 849px) { .home-intro .portrait { display: block; width: 140px; height: auto; border-radius: 0.5rem; background: #fff; margin: 1rem 0; } }
 .news { display: grid; grid-template-columns: 6rem 1fr; gap: 0.4rem 1rem; }
 .news dt { font-weight: 400; color: var(--text-muted-color); }
 .news dd { margin: 0; }
