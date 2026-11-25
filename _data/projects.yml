@@ -1,54 +1,101 @@
-# Research projects shown on the Research page.
-# To show a photo, add   image: /assets/img/your-photo.jpg   and   image_alt: "what it shows"
-# papers: link text and DOI.
-- title: 1.2 kV traction inverters for heavy-duty electric vehicles
-  place: KTH
-  text: >-
-    Raising the dc-link from 800 V to 1.2 kV so that trucks can use megawatt charging.
-    System-level assessment of battery, inverter and motor, with the inverter validated on a
-    250 kW SiC prototype at about 99.1% efficiency.
-  papers:
-    - {label: IEEE Access 2026, doi: 10.1109/ACCESS.2026.3697246}
-    - {label: ECCE Europe 2025, doi: 10.1109/ecce-europe62795.2025.11238433}
-    - {label: SPEC 2024, doi: 10.1109/spec62217.2024.10893180}
-- title: Carrier phase-shift modulation
-  place: KTH
-  text: >-
-    Adapting the carriers of two-level inverters in real time to reduce common-mode voltage
-    and dc-link capacitor stress, with no extra hardware.
-  papers:
-    - {label: IPEC-Nagasaki 2026, doi: 10.23919/ipec-nagasaki2026-ec64663.2026.11596703}
-    - {label: ECCE Europe 2025, doi: 10.1109/ecce-europe62795.2025.11238855}
-- title: SiC device characterisation and health monitoring
-  place: KTH
-  text: >-
-    Double-pulse testing, condition monitoring and reliability of SiC MOSFETs and power modules,
-    including compensated on-state resistance as an indicator of package degradation.
-  papers:
-    - {label: IEEE Trans. Power Electronics 2027 (early access), doi: 10.1109/TPEL.2026.3723729}
-    - {label: EuroSimE 2025, doi: 10.1109/eurosime65125.2025.11006626}
-    - {label: ECCE Europe 2024, doi: 10.1109/ecceeurope62508.2024.10751827}
-- title: Contactless field excitation
-  place: KTH and METU
-  text: >-
-    Feeding the rotor winding of electrically excited synchronous machines by wireless power
-    transfer, using the existing motor-drive inverter or a bipolar supply for pole-changing machines.
-  papers:
-    - {label: IEEE Trans. Industrial Electronics 2026, doi: 10.1109/TIE.2026.3658721}
-    - {label: IEEE Trans. Power Electronics 2023, doi: 10.1109/tpel.2023.3300531}
-- title: Concurrent wired and wireless power transfer
-  place: METU PowerLab
-  text: >-
-    One converter that drives a motor at the fundamental frequency and powers a wireless link
-    with its switching harmonics, each controlled independently.
-  papers:
-    - {label: IEEE Trans. Industrial Electronics 2023, doi: 10.1109/TIE.2022.3213908}
-    - {label: IEEE JESTIE 2023, doi: 10.1109/JESTIE.2022.3182592}
-- title: Modular, fault-tolerant inductive power transfer
-  place: METU PowerLab
-  text: >-
-    Multi-transmitter, multi-receiver systems that balance power between modules and keep running
-    after open-circuit faults, demonstrated on a 1 kW prototype with a resonator coil.
-  papers:
-    - {label: IEEE JESTPE 2023, doi: 10.1109/JESTPE.2022.3208423}
-    - {label: IEEE JESTPE 2022, doi: 10.1109/JESTPE.2021.3074888}
+# Projects shown on the Projects page, newest first.
+# image and image_alt are optional: a photo in assets/img.
+- group: KTH Royal Institute of Technology
+  items:
+    - name: Moore4Power
+      title: More than Moore for Disruptive Innovations in Power Electronics
+      period: 2026–2029
+      funding: EU Chips Joint Undertaking, grant 101252572. Coordinated by Infineon.
+      link: https://cordis.europa.eu/project/id/101252572
+      current: true
+      about: >-
+        A European project with more than 60 partners that brings the More-than-Moore idea from
+        microelectronics to power electronics: modular building blocks and power chiplets that combine
+        Si, SiC and GaN devices with sensing, control and communication.
+    - name: PowerizeD
+      title: Digitalization of Power Electronic Applications within Key Technology Value Chains
+      period: 2023–2025
+      funding: EU Key Digital Technologies / Chips Joint Undertaking, grant 101096387, and Vinnova. Coordinated by Infineon.
+      link: https://cordis.europa.eu/project/id/101096387
+      about: >-
+        A European project on intelligent and digitalized power electronics, covering the value chain from
+        materials to systems, with lower losses, longer lifetime and shorter design time as targets.
+      work:
+        - System-level assessment of 1.2 kV dc-link traction drives, with a 250 kW SiC inverter prototype
+        - Health diagnostics of SiC MOSFETs from compensated on-state resistance
+      papers:
+        - {label: IEEE Access 2026, doi: 10.1109/ACCESS.2026.3697246}
+        - {label: IEEE Trans. Power Electronics 2027 (early access), doi: 10.1109/TPEL.2026.3723729}
+    - name: HEMIZERO
+      title: High-Power Electric Machine and Inverter for ZERO Emission
+      funding: Swedish Energy Agency, P2022-00956, within the FFI programme. KTH, Scania and Inmotion.
+      link: https://www.kth.se/hemizero
+      about: >-
+        Electric machines and inverters for heavy-duty vehicles such as long-haul trucks. The project aims at
+        lower losses and higher reliability at high system voltage.
+      work:
+        - Raising the dc link from 800 V to 1.2 kV, seen from the battery, charging, inverter and motor sides
+        - Choosing the switching frequency from inverter and motor harmonic losses together
+        - Contactless bipolar field excitation for pole-changing electrically excited machines
+        - Condition monitoring of SiC MOSFETs
+      papers:
+        - {label: IEEE Access 2026, doi: 10.1109/ACCESS.2026.3697246}
+        - {label: IEEE Trans. Industrial Electronics 2026, doi: 10.1109/TIE.2026.3658721}
+        - {label: IEEE Trans. Power Electronics 2027 (early access), doi: 10.1109/TPEL.2026.3723729}
+        - {label: ECCE Europe 2025, doi: 10.1109/ecce-europe62795.2025.11238801}
+- group: METU PowerLab
+  items:
+    - name: Dual-mode wireless power transfer
+      title: One transmitter for narrowband and wideband receivers
+      about: >-
+        A single inverter feeds two receivers at different frequencies at the same time, for wireless
+        charging products with different standards. A hybrid carrier and reference phase shift controls
+        each frequency independently.
+      papers:
+        - {label: IEEE Trans. Power Electronics 2025, doi: 10.1109/TPEL.2024.3474040}
+      repo: Narrowband-Wideband
+    - name: Concurrent motor drive and wireless power transfer
+      title: M.Sc. thesis, 2022
+      funding: Supported in part by TÜBİTAK, 119E217
+      about: >-
+        The switching harmonics of a motor drive excite a wireless link, while the low-frequency component
+        still drives the motor. The extra high-frequency converter of a contactless slip ring is no longer
+        needed. First shown with a dc motor, then with a three-phase ac drive, and later used for
+        contactless field excitation.
+      papers:
+        - {label: IEEE JESTIE 2023, doi: 10.1109/JESTIE.2022.3182592}
+        - {label: IEEE Trans. Industrial Electronics 2023, doi: 10.1109/TIE.2022.3213908}
+        - {label: IEEE Trans. Power Electronics 2023, doi: 10.1109/tpel.2023.3300531}
+      repo: WPTMotor
+    - name: Contactless slip ring for field excitation
+      title: 1 kW modular inductive power transfer system
+      funding: TÜBİTAK, 119E217
+      about: >-
+        A modular system with several transmitters and receivers that feeds the field winding of a
+        synchronous machine. Small differences between coils make the modules share current unequally.
+        We solved this with cross-coupled receivers, frequency detuning, and a middle resonator coil that also
+        keeps the system running after module faults.
+      papers:
+        - {label: IEEE JESTPE 2022, doi: 10.1109/JESTPE.2021.3074888}
+        - {label: IEEE JESTPE 2023, doi: 10.1109/JESTPE.2022.3208423}
+        - {label: WPW 2022 (modular system), doi: 10.1109/wpw54272.2022.9854014}
+        - {label: WPW 2022 (general model), doi: 10.1109/wpw54272.2022.9853857}
+    - name: Integrated modular motor drive
+      title: GaN-based drive integrated with the machine
+      about: >-
+        I modelled GaN HEMTs with a state-space approach, and studied how parasitic inductance in the dc bus
+        changes capacitor current and voltage ripple in series and parallel connected modules, and how
+        interleaving reduces it.
+      repo: IMMD-Enes
+    - name: PV string inverter
+      title: Three-level SiC boost converter for a 120 kW system
+      about: >-
+        20 kW three-level boost converters in parallel for maximum power point tracking. I contributed to the
+        first simulation design and the choice of magnetic materials.
+    - name: Solar power forecasting
+      title: Short-term forecasts for a 17.5 kW PV plant
+      about: >-
+        Machine learning forecasts based on LSTM and an autoregressive CNN, using free online weather data.
+        Undergraduate project with Murat Göl.
+      papers:
+        - {label: SEST 2020, doi: 10.1109/sest48500.2020.9203124}

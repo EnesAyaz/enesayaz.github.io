@@ -1,4 +1,4 @@
-# Public GitHub repositories shown on the Research Projects page.
+# Public GitHub repositories shown on the Projects page.
 - group: Teaching and tools
   items:
     - {name: PWM Explorer, url: "https://enesayaz.github.io/Modulation-Course/", repo: Modulation-Course, year: 2026, text: "Interactive visualisation of modulation methods for the KTH course EJ2311, from two-level and NPC converters to cascaded H-bridge, flying capacitor and MMC."}

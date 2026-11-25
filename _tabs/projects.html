@@ -1,0 +1,31 @@
+---
+title: Projects
+icon: fas fa-diagram-project
+order: 3
+---
+{% for g in site.data.projects %}
+<h2 id="{{ g.group | slugify }}">{{ g.group }}</h2>
+{% for p in g.items %}
+<section class="project">
+<h3 id="{{ p.name | slugify }}">{{ p.name }}{% if p.current %} <span class="now">current</span>{% endif %}</h3>
+<p class="project-sub">{{ p.title }}{% if p.period %}, {{ p.period }}{% endif %}</p>
+{% if p.image %}<p><img src="{{ p.image | relative_url }}" alt="{{ p.image_alt }}"></p>{% endif %}
+<p>{{ p.about }}</p>
+{% if p.work %}<p class="mb-1"><strong>My work</strong></p>
+<ul>{% for w in p.work %}<li>{{ w }}</li>{% endfor %}</ul>{% endif %}
+{% if p.funding %}<p class="project-meta"><i class="fas fa-coins fa-fw"></i> {{ p.funding }}</p>{% endif %}
+{% if p.papers %}<p class="project-meta"><i class="fas fa-file-lines fa-fw"></i> {% for d in p.papers %}<a href="https://doi.org/{{ d.doi }}">{{ d.label }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
+{% if p.link %}<p class="project-meta"><i class="fas fa-link fa-fw"></i> <a href="{{ p.link }}">Project page</a></p>{% endif %}
+{% if p.repo %}<p class="project-meta"><i class="fab fa-github fa-fw"></i> <a href="https://github.com/EnesAyaz/{{ p.repo }}">{{ p.repo }}</a></p>{% endif %}
+</section>
+{% endfor %}
+{% endfor %}
+
+<h2 id="repositories">Repositories</h2>
+{% for g in site.data.repos %}
+<h3 id="{{ g.group | slugify }}">{{ g.group }}</h3>
+<dl class="cv">
+{% for r in g.items %}<dt>{{ r.year }}</dt><dd><a href="https://github.com/EnesAyaz/{{ r.repo }}"><strong>{{ r.name }}</strong></a>{% if r.url %} (<a href="{{ r.url }}">open the tool</a>){% endif %}<br>{{ r.text }}</dd>
+{% endfor %}
+</dl>
+{% endfor %}
