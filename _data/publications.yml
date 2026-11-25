@@ -1,5 +1,5 @@
 # Publication list. Title, authors, volume, pages and year come from Crossref.
-# To add a paper, copy an entry to the top. kind: journal | conference
+# To add a paper, copy an entry to the top. kind: journal | conference. selected: true shows it on the home page.
 - title: Health Diagnostics of SiC MOSFET Devices Using Compensated On-State Resistance
   authors:
   - B. P. Singh
@@ -8,9 +8,14 @@
   - S. Norrga
   - H.-P. Nee
   venue: IEEE Transactions on Power Electronics
+  abbr: TPEL
   year: 2027
   details: vol. 42, no. 1, pp. 759–774
+  volume: '42'
+  number: '1'
+  pages: 759--774
   doi: 10.1109/TPEL.2026.3723729
+  key: singh2027health
   kind: journal
   topic: SiC devices
   note: Early access
@@ -21,11 +26,17 @@
   - S. Norrga
   - L. Peretti
   venue: IEEE Transactions on Industrial Electronics
+  abbr: TIE
   year: 2026
   details: vol. 73, no. 8, pp. 12539–12544
+  volume: '73'
+  number: '8'
+  pages: 12539--12544
   doi: 10.1109/TIE.2026.3658721
+  key: ayaz2026primary
   kind: journal
   topic: Field excitation
+  selected: true
 - title: Real-Time DC-Link Capacitor Stress Reduction in Two-Level Three-Phase Inverters Using Adaptive Multi-Carrier PWM Method
   authors:
   - E. Ayaz
@@ -33,9 +44,12 @@
   - S. Norrga
   - H.-P. Nee
   venue: International Power Electronics Conference (IPEC-Nagasaki, ECCE Asia)
+  abbr: IPEC
   year: 2026
   details: pp. 1–7
+  pages: 1--7
   doi: 10.23919/ipec-nagasaki2026-ec64663.2026.11596703
+  key: ayaz2026real
   kind: conference
   topic: Modulation
 - title: Calorimetric-Based Condition Monitoring and Reliability Assessment of Power Semiconductor Devices in Electric Vehicle Inverters
@@ -46,9 +60,12 @@
   - S. Norrga
   - H.-P. Nee
   venue: International Power Electronics Conference (IPEC-Nagasaki, ECCE Asia)
+  abbr: IPEC
   year: 2026
   details: pp. 1–7
+  pages: 1--7
   doi: 10.23919/ipec-nagasaki2026-ec64663.2026.11596613
+  key: ghahfarokhi2026calorimetric
   kind: conference
   topic: SiC devices
 - title: 'DC-Link Voltage Scaling to 1.2 kV for Heavy-Duty EVs: System-Level Assessment With Experimental Validation of SiC Traction Inverter'
@@ -58,11 +75,16 @@
   - S. Norrga
   - H.-P. Nee
   venue: IEEE Access
+  abbr: Access
   year: 2026
   details: vol. 14, pp. 80839–80852
+  volume: '14'
+  pages: 80839--80852
   doi: 10.1109/ACCESS.2026.3697246
+  key: ayaz2026dc
   kind: journal
   topic: Traction inverters
+  selected: true
 - title: Design of a High-Power Filter Inductor for Variable-Switching-Frequency TCM-Based ZVS Inverters in EV Drive Systems
   authors:
   - K. Abbas
@@ -73,9 +95,13 @@
   - M. Hiller
   - H.-P. Nee
   venue: IEEE Access
+  abbr: Access
   year: 2026
   details: vol. 14, pp. 125672–125684
+  volume: '14'
+  pages: 125672--125684
   doi: 10.1109/ACCESS.2026.3724004
+  key: abbas2026design
   kind: journal
   topic: Traction inverters
 - title: Common-Mode Voltage Reduction in Two-Level Inverters by Introducing Adaptive Carrier-Phase-Shift Method
@@ -85,9 +111,12 @@
   - S. Norrga
   - H.-P. Nee
   venue: Energy Conversion Congress & Expo Europe (ECCE Europe)
+  abbr: ECCE Europe
   year: 2025
   details: pp. 1–6
+  pages: 1--6
   doi: 10.1109/ecce-europe62795.2025.11238855
+  key: ayaz2025common
   kind: conference
   topic: Modulation
 - title: Enhanced Back-to-Back Power-Hardware-in-the-Loop Test-Bed for Heavy-Duty Traction Inverter
@@ -97,9 +126,12 @@
   - S. Norrga
   - H.-P. Nee
   venue: Energy Conversion Congress & Expo Europe (ECCE Europe)
+  abbr: ECCE Europe
   year: 2025
   details: pp. 1–7
+  pages: 1--7
   doi: 10.1109/ecce-europe62795.2025.11238433
+  key: ghahfarokhi2025enhanced
   kind: conference
   topic: Traction inverters
 - title: SiC MOSFET Condition Monitoring Using Compensated ON-State Resistance for Identifying Package Failures
@@ -110,9 +142,12 @@
   - H.-P. Nee
   - S. Norrga
   venue: Energy Conversion Congress & Expo Europe (ECCE Europe)
+  abbr: ECCE Europe
   year: 2025
   details: pp. 1–6
+  pages: 1--6
   doi: 10.1109/ecce-europe62795.2025.11238801
+  key: singh2025sic
   kind: conference
   topic: SiC devices
 - title: 'Minimizing Losses in Electric Drivetrains: A Comparative Analysis of Inverter Topologies, Switching Frequencies, and Modulation Techniques'
@@ -121,9 +156,12 @@
   - E. Ayaz
   - L. Peretti
   venue: IEEE International Electric Machines & Drives Conference (IEMDC)
+  abbr: IEMDC
   year: 2025
   details: pp. 853–858
+  pages: 853--858
   doi: 10.1109/iemdc60492.2025.11061021
+  key: bocker2025minimizing
   kind: conference
   topic: Traction inverters
 - title: Reliability Studies on SiC MOSFET Modules Following a Partial Failure Incident
@@ -134,9 +172,12 @@
   - H.-P. Nee
   - S. Norrga
   venue: International Conference on Thermal, Mechanical and Multi-Physics Simulation and Experiments in Microelectronics and Microsystems (EuroSimE)
+  abbr: EuroSimE
   year: 2025
   details: pp. 1–7
+  pages: 1--7
   doi: 10.1109/eurosime65125.2025.11006626
+  key: ghahfarokhi2025reliability
   kind: conference
   topic: SiC devices
 - title: Narrowband and Wideband Dual-Mode Wireless Power Transfer System With a Single Transmitter
@@ -146,9 +187,14 @@
   - O. Gulsuna
   - O. Keysan
   venue: IEEE Transactions on Power Electronics
+  abbr: TPEL
   year: 2025
   details: vol. 40, no. 1, pp. 135–141
+  volume: '40'
+  number: '1'
+  pages: 135--141
   doi: 10.1109/TPEL.2024.3474040
+  key: ayaz2025narrowband
   kind: journal
   topic: Wireless power transfer
 - title: Evaluation of Possible Traction Inverter Topologies for Heavy-Duty Electric Vehicles
@@ -160,9 +206,12 @@
   - S. Norrga
   - H.-P. Nee
   venue: IEEE Southern Power Electronics Conference (SPEC)
+  abbr: SPEC
   year: 2024
   details: pp. 1–6
+  pages: 1--6
   doi: 10.1109/spec62217.2024.10893180
+  key: ayaz2024evaluation
   kind: conference
   topic: Traction inverters
 - title: Deskewing Method for Double Pulse Test and Loss Calculation in High-Power SiC Modules
@@ -175,9 +224,12 @@
   - H.-P. Nee
   - M. Leksell
   venue: Energy Conversion Congress & Expo Europe (ECCE Europe)
+  abbr: ECCE Europe
   year: 2024
   details: pp. 1–7
+  pages: 1--7
   doi: 10.1109/ecceeurope62508.2024.10751827
+  key: ghahfarokhi2024deskewing
   kind: conference
   topic: SiC devices
 - title: Experimental Evaluation of a Gate-Step-Response Method for Device Identification used in Self-Configurable Gate-Drive Units
@@ -192,9 +244,12 @@
   - J.-K. Lim
   - K. Kostov
   venue: Energy Conversion Congress & Expo Europe (ECCE Europe)
+  abbr: ECCE Europe
   year: 2024
   details: pp. 1–8
+  pages: 1--8
   doi: 10.1109/ecceeurope62508.2024.10751952
+  key: jackson2024experimental
   kind: conference
   topic: SiC devices
 - title: Variable Carrier Phase-Shift Method for Integrated Contactless Field Excitation System of Electrically Excited Synchronous Motors
@@ -203,22 +258,34 @@
   - O. Altun
   - O. Keysan
   venue: IEEE Transactions on Power Electronics
+  abbr: TPEL
   year: 2023
   details: vol. 38, no. 10, pp. 13243–13253
+  volume: '38'
+  number: '10'
+  pages: 13243--13253
   doi: 10.1109/tpel.2023.3300531
+  key: ayaz2023variable
   kind: journal
   topic: Field excitation
+  selected: true
 - title: Carrier Phase Shift Method of SPWM for Concurrent Wired and Wireless Power Transfer Systems
   authors:
   - E. Ayaz
   - O. Altun
   - O. Keysan
   venue: IEEE Transactions on Industrial Electronics
+  abbr: TIE
   year: 2023
   details: vol. 70, no. 9, pp. 8645–8654
+  volume: '70'
+  number: '9'
+  pages: 8645--8654
   doi: 10.1109/TIE.2022.3213908
+  key: ayaz2023carrier
   kind: journal
   topic: Wireless power transfer
+  selected: true
 - title: Fault Tolerant Multi-Tx/Multi-Rx Inductive Power Transfer System With a Resonator Coil
   authors:
   - E. Ayaz
@@ -226,9 +293,14 @@
   - H. Polat
   - O. Keysan
   venue: IEEE Journal of Emerging and Selected Topics in Power Electronics
+  abbr: JESTPE
   year: 2023
   details: vol. 11, no. 1, pp. 1272–1284
+  volume: '11'
+  number: '1'
+  pages: 1272--1284
   doi: 10.1109/JESTPE.2022.3208423
+  key: ayaz2023fault
   kind: journal
   topic: Wireless power transfer
 - title: Concurrent Wireless Power Transfer and Motor Drive System With a Single Converter
@@ -239,9 +311,14 @@
   - F. Karakaya
   - O. Keysan
   venue: IEEE Journal of Emerging and Selected Topics in Industrial Electronics
+  abbr: JESTIE
   year: 2023
   details: vol. 4, no. 1, pp. 409–418
+  volume: '4'
+  number: '1'
+  pages: 409--418
   doi: 10.1109/JESTIE.2022.3182592
+  key: ayaz2023concurrent
   kind: journal
   topic: Wireless power transfer
 - title: A Modular Inductive Power Transfer System for Synchronous Machine Field Excitation
@@ -251,9 +328,12 @@
   - H. Polat
   - O. Keysan
   venue: Wireless Power Week (WPW)
+  abbr: WPW
   year: 2022
   details: pp. 476–481
+  pages: 476--481
   doi: 10.1109/wpw54272.2022.9854014
+  key: altun2022modular
   kind: conference
   topic: Field excitation
 - title: Generalized Model of Modular Two Element Compensated IPT Systems with Common DC-Bus
@@ -263,9 +343,12 @@
   - H. Polat
   - O. Keysan
   venue: Wireless Power Week (WPW)
+  abbr: WPW
   year: 2022
   details: pp. 260–265
+  pages: 260--265
   doi: 10.1109/wpw54272.2022.9853857
+  key: ayaz2022generalized
   kind: conference
   topic: Wireless power transfer
 - title: Balancing of Common DC-Bus Parallel-Connected Modular Inductive Power Transfer Systems
@@ -275,9 +358,14 @@
   - O. Altun
   - O. Keysan
   venue: IEEE Journal of Emerging and Selected Topics in Power Electronics
+  abbr: JESTPE
   year: 2022
   details: vol. 10, no. 2, pp. 1587–1596
+  volume: '10'
+  number: '2'
+  pages: 1587--1596
   doi: 10.1109/JESTPE.2021.3074888
+  key: polat2022balancing
   kind: journal
   topic: Wireless power transfer
 - title: Solar Power Generation Analysis and Forecasting Real-World Data Using LSTM and Autoregressive CNN
@@ -288,8 +376,11 @@
   - E. Yılmaz
   - M. Göl
   venue: International Conference on Smart Energy Systems and Technologies (SEST)
+  abbr: SEST
   year: 2020
   details: pp. 1–6
+  pages: 1--6
   doi: 10.1109/sest48500.2020.9203124
+  key: tosun2020solar
   kind: conference
   topic: Solar forecasting

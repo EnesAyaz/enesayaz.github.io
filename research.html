@@ -1,0 +1,24 @@
+---
+layout: page
+title: Research
+share-title: Research | Enes Ayaz
+share-description: Research on SiC traction inverters, modulation, device health monitoring, contactless field excitation and wireless power transfer.
+subtitle: Power electronics for electric drives, from semiconductor devices to the full traction system.
+nav: Research
+---
+<div class="projects">
+{% for pr in site.data.projects %}
+  <article class="project">
+    {% if pr.image %}<img src="{{ pr.image | relative_url }}" alt="{{ pr.image_alt }}" loading="lazy">{% else %}{% include figures/{{ pr.figure }}.svg %}{% endif %}
+    <div>
+      <h2>{{ pr.title }}</h2>
+      <p class="meta">{{ pr.place }}</p>
+      <p>{{ pr.text }}</p>
+      <ul class="refs">
+        {% for d in pr.papers %}<li><a href="https://doi.org/{{ d.doi }}">{{ d.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+{% endfor %}
+</div>

@@ -1,5 +1,18 @@
-{% assign p = include.pub %}<li class="pub">
+{% assign p = include.pub %}{% assign ob = "{" %}{% assign cb = "}" %}<li class="pub">
+  <span class="badge">{{ p.abbr }}</span>
+  <div>
   <a class="pub-title" href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>
   <p>{% for a in p.authors %}{% if a == "E. Ayaz" %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
   <p><em>{{ p.venue | escape }}</em>{% if p.details != "" %}, {{ p.details }}{% endif %}, {{ p.year }}{% if p.note %} ({{ p.note | downcase }}){% endif %}</p>
+  {% unless include.brief %}<details><summary>BibTeX</summary><pre>@{% if p.kind == "journal" %}article{% else %}inproceedings{% endif %}{{ ob }}{{ p.key }},
+  author = "{{ p.authors | join: ' and ' }}",
+  title = "{{ ob }}{{ p.title | replace: '&', 'and' | escape }}{{ cb }}",
+  {% if p.kind == "journal" %}journal{% else %}booktitle{% endif %} = "{{ p.venue | replace: '&', 'and' | escape }}",
+  year = "{{ p.year }}",{% if p.volume %}
+  volume = "{{ p.volume }}",{% endif %}{% if p.number %}
+  number = "{{ p.number }}",{% endif %}{% if p.pages %}
+  pages = "{{ p.pages }}",{% endif %}
+  doi = "{{ p.doi }}"
+{{ cb }}</pre></details>{% endunless %}
+  </div>
 </li>

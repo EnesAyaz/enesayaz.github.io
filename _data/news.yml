@@ -1,0 +1,9 @@
+# Newest first. Shown on the home page. Markdown is not processed; use HTML for links.
+- date: Aug 2026
+  text: 'Paper on <a href="https://doi.org/10.1109/TIE.2026.3658721">contactless bipolar field excitation</a> in IEEE Transactions on Industrial Electronics.'
+- date: May 2026
+  text: 'Two papers at IPEC-Nagasaki 2026, on <a href="https://doi.org/10.23919/ipec-nagasaki2026-ec64663.2026.11596703">dc-link capacitor stress</a> and <a href="https://doi.org/10.23919/ipec-nagasaki2026-ec64663.2026.11596613">condition monitoring</a>.'
+- date: Dec 2025
+  text: '50% seminar at KTH: <a href="https://www.kth.se/epe/calendar/1-2-kv-heavy-duty-electric-vehicle-powertrains-system-level-analysis-and-holistic-efficiency-optimization-of-the-traction-inverter-1.1446235">1.2 kV heavy-duty electric vehicle powertrains</a>.'
+- date: Sep 2025
+  text: 'Three papers at ECCE Europe 2025, on <a href="https://doi.org/10.1109/ecce-europe62795.2025.11238855">common-mode voltage</a>, a <a href="https://doi.org/10.1109/ecce-europe62795.2025.11238433">traction inverter test bed</a> and <a href="https://doi.org/10.1109/ecce-europe62795.2025.11238801">SiC condition monitoring</a>.'

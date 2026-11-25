@@ -22,8 +22,10 @@ url: https://enesayaz.github.io
 
 navbar-links:
   Home: "/"
-  Publications: "/publications"
-  CV: "/CV"
+  Research: "/research/"
+  Publications: "/publications/"
+  Blog: "/blog/"   # shown once there is at least one post
+  CV: "/CV/"
 
 # Portrait on the home page, also used for link previews. Uncomment to show it.
 #avatar: "/assets/img/profile.png"
@@ -36,6 +38,9 @@ contact:
     ORCID: "https://orcid.org/0000-0002-5677-1336"
     GitHub: "https://github.com/EnesAyaz"
     KTH profile: "https://www.kth.se/profile/enesa"
+
+# Description of the RSS feed (feed.xml)
+rss-description: Notes on power electronics and research by Enes Ayaz
 
 # Word length of automatic page descriptions
 excerpt_length: 50
@@ -82,7 +87,7 @@ date_format: "%B %-d, %Y"
 timezone: "Europe/Stockholm"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /blog/:year/:title/
 
 kramdown:
   input: GFM

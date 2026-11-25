@@ -55,6 +55,6 @@ nav: CV
 {% assign journals = site.data.publications | where: "kind", "journal" %}
 {% assign confs = site.data.publications | where: "kind", "conference" %}
 <h2>Journal papers</h2>
-<ul class="pubs">{% for pub in journals %}{% include pub.html pub=pub %}{% endfor %}</ul>
+<ul class="pubs">{% for pub in journals %}{% include pub.html pub=pub brief=true %}{% endfor %}</ul>
 <h2>Conference papers</h2>
-<ul class="pubs">{% for pub in confs %}{% include pub.html pub=pub %}{% endfor %}</ul>
+<ul class="pubs">{% for pub in confs %}{% include pub.html pub=pub brief=true %}{% endfor %}</ul>
