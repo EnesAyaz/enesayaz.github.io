@@ -132,6 +132,7 @@
     a.slider(c, 'Reference angle', 0, 359, 1, function () { return M.th * 360 / TAU; }, function (v) { M.th = v * TAU / 360; }, function () { return Math.round(M.th * 360 / TAU) + '°'; });
     a.slider(c, 'Rotation speed', 0, 3, 0.1, function () { return M.speed; }, function (v) { M.speed = v; }, function () { return M.speed.toFixed(1) + '×'; });
     a.play(c);
+    a.reset(c, function () { M.M = 0.9; M.th = 0.6; M.tau = 0; M.method = 'SVPWM'; M.speed = 1; });
     var pl = a.box('anim-plots');
     a.add(a.panel(pl), 400, 210, 'Duty ratios over one fundamental period', drawCycle, M, 'duty');
     a.add(a.panel(pl), 400, 210, 'Switched line voltage over one fundamental period', drawCycle, M, 'line');

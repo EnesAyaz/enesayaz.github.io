@@ -124,6 +124,7 @@
     a.slider(c, 'Modulation index', 0, 1, 0.01, function () { return M.M; }, set('M'), function () { return M.M.toFixed(2); });
     a.slider(c, 'Carrier ratio', 9, 33, 6, function () { return M.ratio; }, set('ratio'), function () { return M.ratio; });
     a.play(c);
+    a.reset(c, function () { M.M = 0.8; M.b = 0; M.c = 0; M.ratio = 9; M.x = 0.2; M.solve(); });
     var pl = a.box('anim-plots');
     a.add(a.panel(pl), 400, 220, 'DC-link capacitor current', drawIc, M);
     a.add(a.panel(pl), 400, 220, 'Line voltage spectrum', drawSpec, M);

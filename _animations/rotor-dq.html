@@ -1,0 +1,26 @@
+---
+title: Rotor frame and torque
+description: Drag the current vector in the rotor frame and see how a salient rotor adds reluctance torque.
+topics: [Electrical machines, Control]
+animation: rotor-dq
+view: thumb
+order: 5
+---
+<p>Seen from the rotor, the stator currents of a synchronous machine are two constant numbers, \(i_d\) and \(i_q\). The angle of the current vector to the rotor sets the torque. <strong>Drag the blue current vector</strong> in the rotor frame on the right.</p>
+
+<div data-animation="rotor-dq"></div>
+
+<h2 id="try">Things to try</h2>
+<ul>
+  <li><strong>Set the saliency to zero.</strong> Torque comes only from \(i_q\), and the best angle for a given current is 90°.</li>
+  <li><strong>Make \(L_d\) smaller than \(L_q\)</strong>, as in an interior permanent-magnet machine. The best angle moves past 90°: some negative \(i_d\) gives extra reluctance torque.</li>
+  <li><strong>Make \(L_d\) larger than \(L_q\)</strong>, as in a salient-pole wound-field machine. Now the best angle is below 90°.</li>
+  <li><strong>Watch the stator while the rotor turns.</strong> The phase currents are sinusoidal, but in the rotor frame nothing moves.</li>
+</ul>
+
+<h2 id="model">Model</h2>
+<p>Normalized machine with \(\psi_f = 1\), one pole pair and \(L_q = 1\) pu. With the current of size \(I\) at angle \(\beta\) from the d axis,</p>
+<p>\[ i_d = I\cos\beta, \quad i_q = I\sin\beta, \qquad T_e = \tfrac32\, p\,\left[\psi_f\, i_q + (L_d - L_q)\, i_d\, i_q\right] \]</p>
+<p>The stator currents follow from the amplitude-invariant Park transform, \(i_k = I\cos(\theta_r + \beta - \alpha_k)\). MTPA marks the angle with the most torque for the present current. The rotor turns once in 7 seconds on screen.</p>
+{% include animation-scripts.html %}
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>

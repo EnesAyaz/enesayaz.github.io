@@ -67,6 +67,15 @@
     this.line([[x - 8, y - 7], [x + 8, y - 7]], on ? FIELD : this.soft, 2);
   };
 
+  /* text with a subscript, e.g. p.sub('i', 'd', x, y) */
+  Pen.prototype.sub = function (base, sub, x, y, o) {
+    o = o || {}; var g = this.g, size = o.size || 13, f = (o.bold ? '600 ' : '') + size + 'px ' + this.font, fs = Math.round(size * 0.72) + 'px ' + this.font;
+    g.font = f; var w1 = g.measureText(base).width; g.font = fs; var w2 = sub ? g.measureText(sub).width : 0, w = w1 + w2;
+    var x0 = o.align === 'left' ? x : o.align === 'right' ? x - w : x - w / 2;
+    g.fillStyle = o.col || this.ink; g.textBaseline = 'middle'; g.textAlign = 'left';
+    g.font = f; g.fillText(base, x0, y); if (sub) { g.font = fs; g.fillText(sub, x0 + w1, y + size * 0.3); }
+    return w;
+  };
   Pen.prototype.arrow = function (x0, y0, x1, y1, col, w) {
     var a = Math.atan2(y1 - y0, x1 - x0), L = Math.hypot(x1 - x0, y1 - y0), h = Math.min(6 + 2 * w, L * 0.6), g = this.g;
     this.line([[x0, y0], [x1 - h * 0.7 * Math.cos(a), y1 - h * 0.7 * Math.sin(a)]], col, w);
@@ -99,6 +108,10 @@
         var b = el('button', '', f, n); b.type = 'button'; b.addEventListener('click', function () { set(n); a.paint(); });
         syncs.push(function () { var on = String(get() === n); if (b.getAttribute('aria-pressed') !== on) b.setAttribute('aria-pressed', on); });
       });
+    };
+    a.reset = function (parent, fn) {
+      var b = el('button', 'anim-reset', parent, 'Reset'); b.type = 'button';
+      b.addEventListener('click', function () { fn(); a.paint(); });
     };
     a.play = function (parent) {
       var b = el('button', 'anim-play', parent), sync = function () { b.textContent = playing ? 'Pause' : 'Play'; }; b.type = 'button'; sync();

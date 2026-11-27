@@ -1,0 +1,28 @@
+---
+title: Load step of a synchronous machine
+description: Step the load and watch the power angle swing. Step too far and the machine slips a pole.
+topics: [Electrical machines, Power systems]
+animation: load-step
+view: thumb
+order: 6
+---
+<p>A synchronous motor on a stiff grid carries more load by increasing its power angle δ. When the load jumps, the rotor slows down for a moment, overshoots the new angle and swings back. <strong>Move the load slider</strong> to step the load.</p>
+
+<div data-animation="load-step"></div>
+
+<h2 id="try">Things to try</h2>
+<ul>
+  <li><strong>Step the load from 0.30 to 0.65 pu.</strong> δ swings past its new value and settles. The two shaded areas on the power curve are equal at the turning point.</li>
+  <li><strong>Set the damping to zero</strong> and step again. The swing never dies out.</li>
+  <li><strong>Step to more than the value under the curve</strong>, the largest stable step from rest. The accelerating area is too large, δ passes the unstable point and the machine loses synchronism.</li>
+  <li><strong>Change the inertia.</strong> A heavier rotor swings more slowly, but how far it swings does not change.</li>
+</ul>
+
+<h2 id="model">Model</h2>
+<p>The classical model of a synchronous machine on an infinite bus, with normalized inertia \(M\), damping \(D\) and \(P_{max} = 3VE/X_s = 1\) pu:</p>
+<p>\[ M\,\ddot\delta + D\,\dot\delta = P_{load} - P_{max}\sin\delta, \qquad \delta = \angle V - \angle E \]</p>
+<p>A positive \(\dot\delta\) means the rotor is slower than synchronous speed. Without damping, a step from rest at \(\delta_0\) to the load \(P\) stays in synchronism when the equal-area criterion holds:</p>
+<p>\[ \int_{\delta_0}^{\pi - \arcsin P} \left(P - \sin\delta\right) d\delta \le 0 \]</p>
+<p>Electrical transients, saturation and stator resistance are neglected, and the cylindrical-rotor power curve is used. Time is normalized; one second on screen is two time units.</p>
+{% include animation-scripts.html %}
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
