@@ -227,7 +227,7 @@
         var r = el('input', '', l); r.type = 'range'; r.min = min; r.max = max; r.step = st; r.value = key === 'beta' ? M.beta * 180 / PI : M[key];
         r.setAttribute('aria-label', label);
         r.addEventListener('input', function () { M[key] = key === 'beta' ? r.value * PI / 180 : +r.value; M.link(); paint(); });
-        out[key].update = function () { out[key].textContent = fmt(); if (key === 'beta') { r.value = M.beta * 180 / PI; r.disabled = M.auto; } };
+        out[key].update = function () { out[key].textContent = fmt(); r.value = key === 'beta' ? M.beta * 180 / PI : M[key]; if (key === 'beta') r.disabled = M.auto; };
       };
       slider('set', 'Field current reference', 0, 6, 0.1, function () { return M.set.toFixed(1) + ' A'; });
       slider('m', 'Motor modulation index', 0, 1, 0.01, function () { return M.m.toFixed(2); });
@@ -236,8 +236,10 @@
       var tog = el('label', 'anim-check', ctl), box = el('input', '', tog); box.type = 'checkbox'; box.checked = M.auto; el('span', '', tog, 'Adapt the carrier phase shift automatically');
       box.addEventListener('change', function () { M.auto = box.checked; M.link(); paint(); });
       slider('beta', 'Carrier phase shift', 0, 180, 1, function () { return Math.round(M.beta * 180 / PI) + '°'; });
-      var btn = el('button', 'anim-play', ctl); btn.type = 'button';
+      var bar = el('div', 'anim-buttons', ctl), btn = el('button', 'anim-play', bar); btn.type = 'button';
       btn.addEventListener('click', function () { playing = !playing; sync(); if (playing) kick(); });
+      var rst = el('button', 'anim-reset', bar, 'Reset'); rst.type = 'button';
+      rst.addEventListener('click', function () { Model.call(M); box.checked = M.auto; paint(); });
       var plots = el('div', 'anim-plots', root);
       add(el('div', 'anim-panel', plots), 330, 200, 'Plot of link voltage and currents', drawPlot, 'hf');
       add(el('div', 'anim-panel', plots), 330, 200, 'Plot of field current over time', drawPlot, 'field');
