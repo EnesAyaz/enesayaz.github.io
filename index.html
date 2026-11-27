@@ -13,14 +13,7 @@ layout: home
   <div class="portrait" role="img" aria-label="Portrait of Enes Ayaz"></div>
 </section>
 
-<h2 id="animations">Animations</h2>
-{% for a in site.animations limit:3 %}
-<a class="anim-card" href="{{ a.url | relative_url }}">
-  <span data-animation="{{ a.animation }}" data-view="{{ a.view }}"></span>
-  <span><span class="card-title d-block">{{ a.title }}</span><span>{{ a.description }}</span></span>
-</a>
-{% endfor %}
-
+<h2 id="tools">Tools</h2>
 {% include tool-card.html %}
 
 {% if site.posts.size > 0 %}
@@ -39,5 +32,3 @@ layout: home
 {% for pub in site.data.publications %}{% if pub.selected %}{% include pub.html pub=pub brief=true %}{% endif %}{% endfor %}
 </ul>
 <p><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
-
-{% include animation-scripts.html %}
